@@ -1,39 +1,64 @@
-.App {
-  text-align: center;
+// @use "./variables" as *;
+// @use "./fonts" as *;
+@use "./styles/partials/mixins" as *;
+
+html {
+  font-family: 'AvenirNext LT Pro', sans-serif;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+button {
+  border: 0;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  outline: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  padding: 0 1.5rem;
+
+  @include tablet {
+    padding: 0 2rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
+  @include desktop {
+    max-width: 80rem;
+    margin: 0 auto;
   }
 }
