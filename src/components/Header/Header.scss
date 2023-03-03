@@ -3,13 +3,14 @@
 
 
 .header {
-    padding: 0.8rem 0 0;
+    padding: 0.8125rem 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @include tablet {
         flex-direction: row;
+        padding: 1rem 0 0.9375rem;
         justify-content: space-around;
     }
 
@@ -30,11 +31,11 @@
             margin-left: auto;
             flex-wrap: nowrap;
             height: auto;
-            padding: 0.5rem 0;
+            // padding: 0.5rem 0;
         }
 
         @include desktop {
-            padding-top: 0.2rem;
+            // padding-top: 0.2rem;
         }
     }
 

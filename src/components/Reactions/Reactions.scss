@@ -1,0 +1,92 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.details-container {
+    border-top: solid 1px $secondaryDark;
+    border-bottom: solid 1px $secondaryDark;
+    padding: .7rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: $fs-080;
+    margin-top: 1rem;
+
+    @include tablet {
+        border-top: none;
+    }
+
+    @include desktop {
+        padding-right: 2rem;
+        margin-top: 0;
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 2rem;
+            align-items: flex-end;
+        }
+    }
+
+    &__text {
+        font-weight: $fw-600;
+        font-size: $fs-085;
+        color: $primary;
+
+        @include tablet {
+            font-weight: $fw-700;
+        }
+    }
+
+    &__date {
+        font-weight: $fw-400;
+        color: $primaryDark;
+        font-size: $fs-080;
+
+        @include tablet {
+            font-size: $fs-075;
+        }
+    }
+}
+
+.reactions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-right: 3rem;
+    color: $primaryDark;
+
+    @include tablet {
+        flex-direction: row;
+        gap: 2rem;
+        margin-right: 0;
+        font-size: $fs-075;
+    }
+
+    &__views {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+
+    &__img {
+        max-width: 1.2rem;
+    }
+
+    &__likes {
+        display: flex;
+        gap: 0.5rem;
+
+        &__img {
+            max-width: 1.2rem;
+        }
+    }
+
+    &__text {
+        font-weight: $fw-400;
+    }
+}

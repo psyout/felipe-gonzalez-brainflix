@@ -1,0 +1,19 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.main-content {
+    &__text {
+        margin-top: 1rem;
+        // border-top: solid 1px $secondaryDark;
+        line-height: 1.4;
+
+        @include tablet {
+            border-top: 0;
+            margin-top: 1.5rem;
+        }
+
+        @include desktop {
+            padding-right: 1rem;
+        }
+    }
+}

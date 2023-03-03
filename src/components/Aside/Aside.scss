@@ -5,6 +5,10 @@
     margin-bottom: 1.5rem;
 
     @include desktop {
+        margin-bottom: 0;
+    }
+
+    @include desktop {
         flex-basis: 30%;
         border-left: solid 1px $secondaryDark;
         padding: 2.3rem 0 0 1.5rem;
@@ -25,53 +29,7 @@
 .video-list {
     width: 100%;
 
-    &__item {
-        display: flex;
-        margin-top: 1.3rem;
-        gap: 1rem;
-        list-style-type: none;
-    }
-
-    &__thumb {
-        max-width: 6.25rem;
-        height: 3.75rem;
-        border-radius: 0.4rem;
-        object-fit: cover;
-        background-color: $secondaryDark;
-    }
-}
-
-.video-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    @include tablet {
-        width: 30%;
-    }
-
     @include desktop {
-        width: 100%;
-    }
-
-    &__text {
-        line-height: 1.2;
-        font-size: $fs-090;
-        font-weight: $fw-600;
-
-        @include desktop {
-            font-size: $fs-085;
-        }
-    }
-
-    &__title {
-        margin-top: 0.5rem;
-        font-size: $fs-090;
-
-        @include desktop {
-            font-size: $fs-085;
-        }
-
-        font-weight: $fw-400;
+        padding-bottom: 1.5rem;
     }
 }
