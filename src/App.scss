@@ -1,5 +1,8 @@
-// @use "./variables" as *;
-// @use "./fonts" as *;
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
+
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/fonts" as *;
 @use "./styles/partials/mixins" as *;
 
 html {
@@ -39,7 +42,6 @@ body {
 
 img {
   width: 100%;
-  max-width: 100%;
   height: auto;
   outline: none;
 }
@@ -51,7 +53,17 @@ a:visited {
 
 .container {
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
+
+  @include desktop {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+}
+
+.main-container {
+  width: 100%;
+  padding: 0 1rem;
 
   @include tablet {
     padding: 0 2rem;
@@ -60,5 +72,6 @@ a:visited {
   @include desktop {
     max-width: 80rem;
     margin: 0 auto;
+    display: flex;
   }
 }
