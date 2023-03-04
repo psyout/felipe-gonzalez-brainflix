@@ -1,9 +1,8 @@
 import './Caption.scss';
-import data from '../../data/video-details.json';
 
-function Caption() {
+function Caption({ videoData }) {
     return (
-        <p className="main-content__text">{data[0].description}</p>
+        <p className="main-content__text">{videoData.description}</p>
     )
 }
 

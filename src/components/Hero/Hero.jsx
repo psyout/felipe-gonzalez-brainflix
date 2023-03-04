@@ -1,10 +1,10 @@
 import './Hero.scss';
 
-function Hero() {
+function Hero({ selectedVideo }) {
 
     return (
         <div className='hero-container'>
-            <video className="hero-container__video" src="" controls poster="https://i.imgur.com/l2Xfgpl.jpg"></video>
+            <video className="hero-container__video" src={selectedVideo.image} controls poster={selectedVideo.image}></video>
         </div>
     );
 }

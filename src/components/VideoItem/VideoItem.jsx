@@ -1,12 +1,12 @@
 import './VideoItem.scss';
 
-function VideoItem({ image, title, channel, description }) {
+function VideoItem({ videoAside, handleVideoClick, videoData }) {
     return (
-        <li className="video-list__item">
-            <img className="video-list__thumb" src={image} alt={description} />
+        <li className="video-list__item" onClick={() => { handleVideoClick(videoAside.id) }}>
+            <img className="video-list__thumb" src={videoAside.image} alt={videoAside.description} title={videoAside.description} />
             <div className="video-details">
-                <p className="video-details__text">{title}</p>
-                <h1 className="video-details__title">{channel}</h1>
+                <p className="video-details__text">{videoAside.title}</p>
+                <h1 className="video-details__title">{videoAside.channel}</h1>
             </div>
         </li>
     )
