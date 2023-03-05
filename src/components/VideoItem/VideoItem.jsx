@@ -1,6 +1,6 @@
 import './VideoItem.scss';
 
-function VideoItem({ videoAside, handleVideoClick, videoData }) {
+function VideoItem({ videoAside, handleVideoClick }) {
     return (
         <li className="video-list__item" onClick={() => { handleVideoClick(videoAside.id) }}>
             <img className="video-list__thumb" src={videoAside.image} alt={videoAside.description} title={videoAside.description} />

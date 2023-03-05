@@ -5,7 +5,7 @@ function Form() {
     return (
         <div className="comment-container">
             <div className="avatar-container">
-                <img className="avatar-container__img" src={image} alt="" />
+                <img className="avatar-container__img" src={image} alt="avatar" />
             </div>
             <form className="form-container" id="form-container">
                 <label className="form-container__title">Join the Conversation</label>
