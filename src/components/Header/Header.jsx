@@ -1,5 +1,5 @@
 import './Header.scss';
-import logo from '../../assets/images/brainflix-logo.svg';
+import logo from '../../assets/images/Brainflix-logo.svg';
 import image from '../../assets/images/mohan-muruge.jpg';
 
 function Header() {
