@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 import './Aside.scss';
 import VideoItem from '../VideoItem/VideoItem';
 
 function AsideContent({ videoList, selectedVideo, handleVideoClick }) {
-    useEffect(() => {
+    useState(() => {
         const foundVideo = videoList.find((video) => video.id === selectedVideo.id);
         if (!foundVideo) {
             handleVideoClick(videoList[0].id);

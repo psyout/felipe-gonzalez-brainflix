@@ -24,7 +24,6 @@ function App() {
       <div className="main-container">
         <MainContent videoData={selectedVideo} />
         <AsideContent videoList={videoList} selectedVideo={selectedVideo} handleVideoClick={handleVideoClick} />
-
       </div>
     </div>
   );
