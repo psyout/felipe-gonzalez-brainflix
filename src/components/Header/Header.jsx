@@ -9,7 +9,7 @@ function Header() {
             <img className="header__img" src={logo} alt="logo brainflix" />
             <form className="header__form" action="">
                 <input className="header__input" type="search" placeholder="Search"></input>
-                <img className="header__avatar" src={image} alt="" />
+                <img className="header__avatar" src={image} alt="avatar" />
                 <button className="header__button" type="submit">Upload</button>
             </form>
         </header>
