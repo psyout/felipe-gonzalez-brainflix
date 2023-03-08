@@ -1,30 +1,16 @@
-// import { useState, useEffect } from 'react';
 import thumb from '../../assets/images/Upload-video-preview.jpg';
 import './VideoUpload.scss';
 
 function VideoUpload(){
-    // const [submitted, setSubmitted] = useState(false);
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     setSubmitted(true);
-    // };
-
-    // useEffect(() => {
-    //     if (submitted) {
-    //         window.location.href = '/';
-    //     }
-    // }, [submitted]);
-    
     return(
         <div className="video-container">
             <h1 className="video-container__title">Upload Video</h1>
             <h4 className="video-container__subtitle">Video Thumbnail</h4>
-            <form /*onSubmit={handleSubmit}*/ className="video-form">
+            <form action="" className="video-form">
                 <img className="input-container__thumb" src={thumb} alt="upload thumbnail" />
                 <div className="input-container">
                     <label className="input-container__label">Title your video</label>
-                    <input className="input-container__input" type="text" required placeholder="Add a title to your video" />
+                    <input className="input-container__input" type="text" placeholder="Add a title to your video" />
                     <label className="input-container__label">Add a video description</label>
                     <textarea className="input-container__textarea" type="text" id="comment" name="comment" required placeholder="Add a description to your video"></textarea>
                 </div>

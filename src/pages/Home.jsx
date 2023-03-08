@@ -4,8 +4,7 @@ import MainContent from '../components/MainContent/MainContent';
 import AsideContent from '../components/Aside/Aside';
 import videoData from '../data/video-details.json';
 import videoList from '../data/videos.json';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState } from 'react';
 
 function App() {
   const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
