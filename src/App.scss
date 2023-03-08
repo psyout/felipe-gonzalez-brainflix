@@ -34,6 +34,11 @@ section {
 
 button {
   border: 0;
+  background: transparent;
+}
+
+hr{
+  border: solid 0.01rem $secondaryDark;
 }
 
 body {
@@ -50,6 +55,8 @@ a,
 a:visited {
   text-decoration: none;
 }
+
+input[type="text"]{font-family: 'AvenirNext LT Pro', sans-serif;}
 
 .container {
   width: 100%;

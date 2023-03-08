@@ -16,6 +16,10 @@
 
     &__img {
         max-width: 8rem;
+
+        &--logo{
+        width: 8rem;
+        }
     }
 
     &__form {
@@ -98,7 +102,15 @@
         font-weight: $fw-600;
         background: $primaryCta url("../../assets/icons/upload.svg") no-repeat 0.5rem;
         cursor: pointer;
-        // transition: all .4s;
+        text-align: center;
+        padding-top: 0.4rem;
+
+        &--title{
+            color: $primaryLight;
+            text-transform: uppercase;
+            font-size: $fs-080;
+            font-weight: $fw-600;
+        }
 
         @include tablet {
             margin-top: 0;
