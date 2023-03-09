@@ -2,31 +2,48 @@ import Hero from '../components/Hero/Hero';
 import Header from '../components/Header/Header';
 import MainContent from '../components/MainContent/MainContent';
 import AsideContent from '../components/Aside/Aside';
-import videoData from '../data/video-details.json';
-import videoList from '../data/videos.json';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+export const apiUrl = "https://project-2-api.herokuapp.com";
+export const apiKey = "0aeb84f0-4ddc-452d-96c3-43be45d310de";
 
-function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
+function Home() {
+  const [selectedVideo, setSelectedVideo] = useState({});
+  const [videoList, setVideoList] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${apiUrl}/videos?api_key=${apiKey}`)
+      .then(response => {
+        setVideoList(response.data);
+        if (response.data.length > 0) {
+          setSelectedVideo(response.data[0]);
+        }
+      })
+      .catch(error => console.log(error));
+  }, []);
 
   const handleVideoClick = (id) => {
-    const video = videoData.find((video) => video.id === id);
-    setSelectedVideo(video);
+    axios.get(`${apiUrl}/videos/${id}?api_key=${apiKey}`)
+      .then(response => setSelectedVideo(response.data))
+      .catch(error => console.log(error));
+    window.scrollTo(0, 0);
   };
+
+  
 
   return (
     <>
-      <div className="container">
-        <Header />
-      </div>
-      <hr />
-      <Hero selectedVideo={selectedVideo} />
-      <div className="main-container">
-        <MainContent videoData={selectedVideo} />
-        <AsideContent videoList={videoList} selectedVideo={selectedVideo} handleVideoClick={handleVideoClick} />
-      </div>
-    </>
+    <div className="container">
+      <Header />
+    </div>
+    <hr />
+    <Hero selectedVideo={selectedVideo} />
+    <div className="main-container">
+      <MainContent videoData={selectedVideo} />
+      <AsideContent videoList={videoList} selectedVideo={selectedVideo} handleVideoClick={handleVideoClick} />
+    </div>
+  </>
   );
 }
 
-export default App;
+export default Home;

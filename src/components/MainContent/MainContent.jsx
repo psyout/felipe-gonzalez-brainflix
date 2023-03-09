@@ -5,7 +5,7 @@ import Caption from '../Caption/Caption';
 import Form from '../Form/Form';
 
 function MainContent({ videoData }) {
-    const { channel, timestamp, views, likes, comments, title } = videoData;
+    const { channel, timestamp, views, likes, comments, title } = videoData || {};
 
     return (
         <main className="main-content">
@@ -15,16 +15,17 @@ function MainContent({ videoData }) {
             <Caption videoData={videoData} />
 
             <section className="conversation">
-                <h1 className="conversation__title">{comments.length} Comments</h1>
+                <h1 className="conversation__title">{Array.isArray(comments) ? comments.length : 0} Comments</h1>
                 <Form />
                 <section id="post">
-                    {comments.map((comment) => (
+                    {Array.isArray(comments) ? comments.map((comment) => (
                         <CommentsSection key={comment.id} name={comment.name} timestamp={comment.timestamp} comment={comment.comment} />
-                    ))}
+                    )) : null}
                 </section>
             </section>
         </main>
     );
 }
+
 
 export default MainContent;

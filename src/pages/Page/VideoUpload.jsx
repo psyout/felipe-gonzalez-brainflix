@@ -1,5 +1,6 @@
 import thumb from '../../assets/images/Upload-video-preview.jpg';
 import './VideoUpload.scss';
+import { Link } from 'react-router-dom';
 
 function VideoUpload(){
     return(
@@ -15,7 +16,9 @@ function VideoUpload(){
                     <textarea className="input-container__textarea" type="text" id="comment" name="comment" required placeholder="Add a description to your video"></textarea>
                 </div>
                 <div className="video-footer">
-                    <button className="video-footer__button" type="submit">Publish</button>
+                    <Link to="/" className="video-footer__button">
+                        <button className="video-footer__button--title" type="submit">Publish</button>
+                    </Link>
                     <button className="video-footer__button video-footer__button--cancel" type="submit">Cancel</button>
                 </div>
             </form>

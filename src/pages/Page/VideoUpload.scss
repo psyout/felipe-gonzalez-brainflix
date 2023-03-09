@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-container{
-    margin: 0 0 3rem 0;
+    margin: 0 0 1rem 0;
     padding-top: 1rem;
 
     &__title{
@@ -19,6 +19,7 @@
             border-bottom: solid 1px $secondaryDark;
             padding-bottom: 1.5rem;
             font-size: $fs-200;
+            margin-bottom: 2rem;
         }
     }
 
@@ -165,9 +166,10 @@
         color: $primaryLight;
         text-transform: uppercase;
         font-weight: $fw-600;
-        font-size: $fs-075;
+        font-size: $fs-080;
         background: $primaryCta url("../../assets/icons/publish.svg") no-repeat 0.5rem;
         cursor: pointer;
+        text-align: center;
 
         &:hover {
             background: $secondaryCta url("../../assets/icons/publish.svg") no-repeat 0.5rem;
@@ -182,6 +184,15 @@
             flex: 0 0 12.5rem;
         }
 
+        &--title{
+            color: $primaryLight;
+            font-weight: $fw-600;
+            text-transform: uppercase;
+            font-size: $fs-090;
+            padding-top: 0.8rem;
+            cursor: pointer;
+        }
+
         &--cancel{
             order: 1;
             background-color: $primaryLight;
@@ -189,6 +200,10 @@
 
             @include tablet{
                 display: block;
+                background: none;
+            }
+
+            &:hover {
                 background: none;
             }
         }
