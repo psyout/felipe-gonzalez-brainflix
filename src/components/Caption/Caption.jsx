@@ -1,8 +1,8 @@
 import './Caption.scss';
 
-function Caption({ videoData }) {
+function Caption({ selectedVideo }) {
     return (
-        <p className="main-content__text">{videoData ? videoData.description : ''}</p>
+        <p className="main-content__text">{selectedVideo.description}</p>
     )
 }
 

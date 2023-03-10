@@ -19,7 +19,7 @@
 }
 
 .avatar-container {
-    margin-top: 1rem;
+    margin-top: 1.4rem;
     display: flex;
 
     @include tablet {
@@ -48,7 +48,7 @@
 
     @include desktop {
         flex: 6;
-        padding-right: 2rem;
+        padding-right: 1.5rem;
     }
 
     &__title {

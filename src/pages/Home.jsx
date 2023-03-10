@@ -3,31 +3,45 @@ import Header from '../components/Header/Header';
 import MainContent from '../components/MainContent/MainContent';
 import AsideContent from '../components/Aside/Aside';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 export const apiUrl = "https://project-2-api.herokuapp.com";
 export const apiKey = "0aeb84f0-4ddc-452d-96c3-43be45d310de";
 
 function Home() {
-  const [selectedVideo, setSelectedVideo] = useState({});
+  
   const [videoList, setVideoList] = useState([]);
+  const [selectedVideo, setSelectedVideo] = useState({});
 
-  useEffect(() => {
+  const {id} = useParams()
+  
+  function getVideos (){
     axios.get(`${apiUrl}/videos?api_key=${apiKey}`)
-      .then(response => {
+      .then((response) => {
+        // console.log(response)
         setVideoList(response.data);
-        if (response.data.length > 0) {
-          setSelectedVideo(response.data[0]);
-        }
+        setSelectedVideo(response.data[0]);
       })
       .catch(error => console.log(error));
-  }, []);
+  }
 
-  const handleVideoClick = (id) => {
-    axios.get(`${apiUrl}/videos/${id}?api_key=${apiKey}`)
-      .then(response => setSelectedVideo(response.data))
+  function getVideo (){
+		axios.get(`${apiUrl}/videos/${id}?api_key=${apiKey}`)
+			.then((response)=>{ setSelectedVideo(response.data
+        )})
       .catch(error => console.log(error));
     window.scrollTo(0, 0);
-  };
+	}
+
+  useEffect(() => {
+    getVideos();
+  }, []);
+
+  useEffect(() => {
+    if (id) {
+      getVideo();
+    }
+  }, [id]);
 
   return (
     <>
@@ -37,8 +51,8 @@ function Home() {
     <hr />
     <Hero selectedVideo={selectedVideo} />
     <div className="main-container">
-      <MainContent videoData={selectedVideo} />
-      <AsideContent videoList={videoList} selectedVideo={selectedVideo} handleVideoClick={handleVideoClick} />
+      <MainContent selectedVideo={selectedVideo} />
+      <AsideContent videoList={videoList} selectedVideo={selectedVideo}/>
     </div>
   </>
   );
