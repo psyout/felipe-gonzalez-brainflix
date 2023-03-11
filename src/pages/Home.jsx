@@ -13,48 +13,52 @@ function Home() {
   const [videoList, setVideoList] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({});
 
-  const {id} = useParams()
-  
-  function getVideos (){
+  let {id} = useParams()
+
+  function getVideoData (){
     axios.get(`${apiUrl}/videos?api_key=${apiKey}`)
       .then((response) => {
-        // console.log(response)
+        console.log(response)
         setVideoList(response.data);
-        setSelectedVideo(response.data[0]);
+        // setSelectedVideo(response.data[0]);
+        if(id === undefined) {
+          id = response.data[0].id;
+        }
+        getVideoDetails();
       })
       .catch(error => console.log(error));
   }
 
-  function getVideo (){
+  function getVideoDetails (){
 		axios.get(`${apiUrl}/videos/${id}?api_key=${apiKey}`)
-			.then((response)=>{ setSelectedVideo(response.data
-        )})
+			.then((response) => { 
+        console.log(response)
+        setSelectedVideo(response.data)
+      })
       .catch(error => console.log(error));
     window.scrollTo(0, 0);
 	}
 
   useEffect(() => {
-    getVideos();
+    getVideoData();
   }, []);
 
-  useEffect(() => {
-    if (id) {
-      getVideo();
-    }
-  }, [id]);
+	useEffect(()=>{
+		id && getVideoDetails()
+	},[id])
 
   return (
     <>
-    <div className="container">
-      <Header />
-    </div>
-    <hr />
-    <Hero selectedVideo={selectedVideo} />
-    <div className="main-container">
-      <MainContent selectedVideo={selectedVideo} />
-      <AsideContent videoList={videoList} selectedVideo={selectedVideo}/>
-    </div>
-  </>
+      <div className="container">
+        <Header />
+      </div>
+      <hr />
+      <Hero selectedVideo={selectedVideo} />
+      <div className="main-container">
+        <MainContent selectedVideo={selectedVideo} />
+        <AsideContent videoList={videoList} selectedVideo={selectedVideo}/>
+      </div>
+    </>
   );
 }
 

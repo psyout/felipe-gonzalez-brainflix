@@ -113,7 +113,7 @@
         outline: solid 0.1rem #e1e1e1;
         padding: 0.7rem;
         font-family: inherit;
-        font-size: 1rem;
+        font-size: $fs-090;
         resize: none;
         height: 7rem;
 
@@ -129,7 +129,7 @@
 
     ::placeholder {
         color: black;
-        font-size: $fs-080;
+        font-size: $fs-090;
         font-weight: 400;
 
         @include tablet {
