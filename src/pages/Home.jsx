@@ -31,7 +31,7 @@ function Home() {
   function getVideoDetails (){
 		axios.get(`${apiUrl}/videos/${id}?api_key=${apiKey}`)
 			.then((response) => { 
-        console.log(response)
+        // console.log(response)
         setSelectedVideo(response.data)
       })
       .catch(error => console.log(error));
