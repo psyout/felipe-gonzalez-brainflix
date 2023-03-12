@@ -18,9 +18,8 @@ function Home() {
   function getVideoData (){
     axios.get(`${apiUrl}/videos?api_key=${apiKey}`)
       .then((response) => {
-        console.log(response)
+        // console.log(response)
         setVideoList(response.data);
-        // setSelectedVideo(response.data[0]);
         if(id === undefined) {
           id = response.data[0].id;
         }

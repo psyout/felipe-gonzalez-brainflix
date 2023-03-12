@@ -2,6 +2,7 @@ import './Form.scss';
 import image from '../../assets/images/mohan-muruge.jpg';
 
 function Form() {
+    
     return (
         <div className="comment-container">
             <div className="avatar-container">

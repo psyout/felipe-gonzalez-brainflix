@@ -2,7 +2,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .video-container{
-    margin: 0 0 1rem 0;
+    margin: 0 0 3rem 0;
     padding-top: 1rem;
 
     &__title{
@@ -24,7 +24,7 @@
     }
 
     &__subtitle{
-        margin-top: 2rem;
+        margin-top: 1rem;
         margin-bottom: 0.3rem;
         text-transform: uppercase;
         font-size: $fs-080;
@@ -133,10 +133,13 @@
         }
     }
 
-    .input-container__select:focus,
     .input-container__textarea:focus {
     outline: solid 0.125rem $primaryCta;
     }
+}
+
+.input-container__input:focus {
+    outline: solid 0.125rem $primaryCta;
 }
 
 .video-footer{
@@ -189,7 +192,6 @@
             font-weight: $fw-600;
             text-transform: uppercase;
             font-size: $fs-090;
-            padding-top: 0.8rem;
             cursor: pointer;
         }
 
