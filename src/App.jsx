@@ -1,21 +1,20 @@
-import './App.scss';
+import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import VideoPage from './pages/VideoPage';
-import Home from './pages/Home';
+import VideoPage from "./pages/VideoPage";
+import Home from "./pages/Home";
 
 function App() {
-
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:id" element={<Home/>} />
-          <Route path="/uploadvideo" element={<VideoPage />} />
-        </Routes>
-      </div>   
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <div className='App'>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/:id' element={<Home />} />
+                    <Route path='/uploadvideo' element={<VideoPage />} />
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;

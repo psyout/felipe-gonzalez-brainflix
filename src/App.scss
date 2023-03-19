@@ -43,6 +43,8 @@ hr{
 
 body {
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -54,7 +56,6 @@ img {
 a,
 a:visited {
   text-decoration: none;
-  color: $primary;
 }
 
 input[type="text"]{font-family: 'AvenirNext LT Pro', sans-serif;}
