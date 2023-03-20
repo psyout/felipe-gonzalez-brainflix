@@ -56,6 +56,7 @@ function Home() {
                 <Header handleLogoClick={handleLogoClick} />
             </div>
             <hr />
+
             <Hero selectedVideo={selectedVideo} />
             <div className='main-container'>
                 <MainContent selectedVideo={selectedVideo} />
