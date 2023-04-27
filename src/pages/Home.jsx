@@ -5,7 +5,7 @@ import AsideContent from '../components/Aside/Aside';
 import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-export const apiUrl = 'http://localhost:3006';
+export const apiUrl = 'https://brainflix.herokuapp.com' || 'http://localhost:3006';
 
 function Home() {
 	const [videoList, setVideoList] = useState([]);
